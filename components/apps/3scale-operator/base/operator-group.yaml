@@ -1,0 +1,12 @@
+apiVersion: operators.coreos.com/v1
+kind: OperatorGroup
+metadata:
+  annotations:
+    app.openshift.io/vcs-uri: 'https://github.com/jmetso/3scale-gitops.git'
+    argocd.argoproj.io/sync-wave: "100"
+  name: 3scale-operator-group
+spec:
+  targetNamespaces:
+    - ''
+  upgradeStrategy: Default
+

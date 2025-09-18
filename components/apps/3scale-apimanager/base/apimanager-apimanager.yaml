@@ -1,0 +1,16 @@
+apiVersion: apps.3scale.net/v1alpha1
+kind: APIManager
+metadata:
+  annotations:
+    app.openshift.io/vcs-uri: 'https://github.com/jmetso/3scale-gitops.git'
+    argocd.argoproj.io/sync-wave: "300"
+  labels:
+    app: 3scale
+    app.kubernetes.io/component: server
+    app.kubernetes.io/instance: apimanager
+    app.kubernetes.io/part-of: apimanager
+  name: apimanager
+spec:
+  wildcardDomain: #OVERRIDE_THIS#
+  monitoring:
+    enabled: true
